@@ -17,4 +17,11 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Commands\" />
+    <Folder Include="DTOs\" />
+    <Folder Include="Entities\" />
+    <Folder Include="EntitiesConfiguration\" />
+  </ItemGroup>
+
 </Project>
