@@ -22,8 +22,4 @@
     <ProjectReference Include="..\TPN2.Domain\TPN2.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Commands\" />
-  </ItemGroup>
-
 </Project>

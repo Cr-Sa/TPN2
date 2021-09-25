@@ -21,8 +21,4 @@
     <ProjectReference Include="..\TPN2.Domain\TPN2.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 </Project>
