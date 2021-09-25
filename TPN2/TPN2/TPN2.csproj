@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TPN2.AccessData\TPN2.AccessData.csproj" />
     <ProjectReference Include="..\TPN2.Application\TPN2.Application.csproj" />
   </ItemGroup>
 

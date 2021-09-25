@@ -4,9 +4,9 @@ using TPN2.Domain.EntitiesConfiguration;
 
 namespace TPN2.AccessData
 {
-    public class TemplateDbContext : DbContext
+    public class CinedbContext : DbContext
     {
-        public TemplateDbContext(DbContextOptions<TemplateDbContext> options) : base(options)
+        public CinedbContext(DbContextOptions<CinedbContext> options) : base(options)
         { 
         
         }

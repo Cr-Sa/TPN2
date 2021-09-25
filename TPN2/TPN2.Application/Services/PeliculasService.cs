@@ -1,7 +1,7 @@
 ﻿using TPN2.Domain.Commands;
 using TPN2.Domain.DTOs;
 using TPN2.Domain.Entities;
-using TPN2.Domain.Queries;
+//using TPN2.Domain.Queries;
 using System;
 using System.Collections.Generic;
 using System.Reflection;

@@ -6,7 +6,7 @@ namespace TPN2.Application.Services
 {
     public interface ITicketsService
     {
-        Peliculas CreateTickets(TicketsDTO ticket);
+        Tickets CreateTickets(TicketsDTO ticket);
         //IList<ClienteDTO> GetAll();
         //Cliente GetById(int clienteId);
     }

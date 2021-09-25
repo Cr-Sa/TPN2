@@ -4,8 +4,8 @@ namespace TPN2.AccessData.Commands
 {
     public class GenericsRepository : IGenericsRepository
     {
-        private readonly TemplateDbContext _context;
-        public GenericsRepository(TemplateDbContext dbContext)
+        private readonly CinedbContext _context;
+        public GenericsRepository(CinedbContext dbContext)
         {
             _context = dbContext;
         }
