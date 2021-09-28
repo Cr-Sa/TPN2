@@ -15,24 +15,15 @@ namespace TPN2.Controllers
         {
             _service = service;
         }
-
+        /// <summary>
+        /// Crea un Ticket
+        /// </summary>
+        /// <param name="ticket"></param>
+        /// <returns>Retorna los datos de la función creada</returns>
         [HttpPost]
         public Tickets Post(TicketsDTO ticket)
         {
             return _service.CreateTickets(ticket);
         }
-
-        //[HttpGet]
-        //public IList<ClienteDTO> GetClientes()
-        //{
-        //    return _service.GetAll();
-        //}
-
-        //[HttpGet("{clienteId:int}")]
-        
-        //public Cliente GetClienteById(int clienteId)
-        //{
-        //    return _service.GetById(clienteId);
-        //}
     }
 }

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TPN2</name>
+    </assembly>
+    <members>
+        <member name="M:TPN2.Controllers.FuncionesController.Post(TPN2.Domain.DTOs.FuncionesDTO)">
+            <summary>
+            Crea una función
+            </summary>
+            <param name="funcion"></param>
+            <returns>Retorna los datos de la función creada</returns>
+        </member>
+        <member name="M:TPN2.Controllers.PeliculasController.Post(TPN2.Domain.DTOs.PeliculasDTO)">
+            <summary>
+            Crea una película
+            </summary>
+            <param name="pelicula"></param>
+            <returns>Retorna los datos de la función creada</returns>
+        </member>
+        <member name="M:TPN2.Controllers.PeliculasController.GetPeliculaById(System.Int32)">
+            <summary>
+            Trae una película por ID
+            </summary>
+            <param name="peliculaId"></param>
+            <returns>Retorna los datos de la función creada</returns>
+        </member>
+        <member name="M:TPN2.Controllers.TicketsController.Post(TPN2.Domain.DTOs.TicketsDTO)">
+            <summary>
+            Crea un Ticket
+            </summary>
+            <param name="ticket"></param>
+            <returns>Retorna los datos de la función creada</returns>
+        </member>
+    </members>
+</doc>

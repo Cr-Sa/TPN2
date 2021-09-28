@@ -4,12 +4,16 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
+using System;
+using System.IO;
+using System.Reflection;
 using TPN2.AccessData;
 using TPN2.AccessData.Commands;
-//using TPN2.AccessData.Queries;
+using TPN2.AccessData.Queries;
 using TPN2.Application.Services;
 using TPN2.Domain.Commands;
-//using TPN2.Domain.Queries;
+using TPN2.Domain.Queries;
 
 namespace TPN2
 {
@@ -33,10 +37,30 @@ namespace TPN2
             services.AddTransient<IFuncionesService, FuncionesService>();
             services.AddTransient<IPeliculasService, PeliculasService>();
             services.AddTransient<ITicketsService, TicketsService>();
+            services.AddTransient<IPeliculaQuery, PeliculaQuery>();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "TPN2_CineAPI",
+                    Version = "v1",
+                    Description = "Trabajo practico número 2",
+                    Contact = new OpenApiContact()
+                    {
+                        Name = "Cristian Sanabria",
+                        Email = "crissanabria_95@hotmail.com"
+                    }
+
+                });
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.XML";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+            });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+            // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -52,6 +76,13 @@ namespace TPN2
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+            // Crea un middleware para exponer la documentación en el JSON.
+            app.UseSwagger();
+            // Crea  un middleware para exponer el UI (HTML, JS, CSS, etc.),
+            // Especificamos en que endpoint buscara el json.
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "CineAPI V1");
             });
         }
     }

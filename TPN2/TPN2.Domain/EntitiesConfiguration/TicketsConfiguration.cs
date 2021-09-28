@@ -10,8 +10,6 @@ namespace TPN2.Domain.EntitiesConfiguration
         public void Configure(EntityTypeBuilder<Tickets> builder)
         {
             builder.HasKey(compuesta => new { compuesta.TicketId, compuesta.FuncionId });
-            builder.Property(compuesta => new { compuesta.TicketId, compuesta.FuncionId })
-                   .ValueGeneratedOnAdd();
 
             builder.Property(tik => tik.Usuario)
                    .IsRequired(true)

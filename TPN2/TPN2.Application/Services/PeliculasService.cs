@@ -5,24 +5,25 @@ using TPN2.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using TPN2.Domain.Queries;
 
 namespace TPN2.Application.Services
 {
     public class PeliculasService : IPeliculasService
     {
         private readonly IGenericsRepository _repository;
-        //private readonly IClienteQuery _query;
+        private readonly IPeliculaQuery _query;
 
-        public PeliculasService(IGenericsRepository repository) //, IClienteQuery query
+        public PeliculasService(IGenericsRepository repository, IPeliculaQuery query)
         {
             _repository = repository;
-            //_query = query;
+            _query = query;
         }
 
-        public Peliculas CreatePelicula(PeliculasDTO pelicula)
+        public PeliculasDTO CreatePelicula(PeliculasDTO pelicula)
         {
 
-            var entity = new Peliculas
+            var entity = new PeliculasDTO
             {
                 PeliculaId = pelicula.PeliculaId,
                 Titulo = pelicula.Titulo,
@@ -30,16 +31,12 @@ namespace TPN2.Application.Services
                 Sinopsis = pelicula.Sinopsis,
                 Trailer = pelicula.Trailer
             };
-            _repository.Add<Peliculas>(entity);
+            _repository.Add<PeliculasDTO>(entity);
             return entity;
-        }     
-        //public IList<ClienteDTO> GetAll()
-        //{
-        //    return _query.GetAll();
-        //}
-        //public Cliente GetById(int clienteId)
-        //{
-        //    return _query.GetById(clienteId);
-        //}
+        }
+        public PeliculasDTO GetById(int peliculaId)
+        {
+            return _query.GetById(peliculaId);
+        }
     }
 }

@@ -3,13 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPN2", "TPN2\TPN2.csproj", "{1DF6DF1F-873B-485E-998D-0094EF4B61AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TPN2", "TPN2\TPN2.csproj", "{1DF6DF1F-873B-485E-998D-0094EF4B61AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPN2.AccessData", "TPN2.AccessData\TPN2.AccessData.csproj", "{19ED013F-8D17-424D-9693-292C824DAA86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TPN2.AccessData", "TPN2.AccessData\TPN2.AccessData.csproj", "{19ED013F-8D17-424D-9693-292C824DAA86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPN2.Domain", "TPN2.Domain\TPN2.Domain.csproj", "{D1DF2AD9-2BA4-4B4E-8262-0FF953C9F099}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TPN2.Domain", "TPN2.Domain\TPN2.Domain.csproj", "{D1DF2AD9-2BA4-4B4E-8262-0FF953C9F099}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPN2.Application", "TPN2.Application\TPN2.Application.csproj", "{13C7BF79-A1D7-4511-8CB4-7E665E9EFCD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TPN2.Application", "TPN2.Application\TPN2.Application.csproj", "{13C7BF79-A1D7-4511-8CB4-7E665E9EFCD3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0EBD9289-C046-4183-AAFC-49E00979458D}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

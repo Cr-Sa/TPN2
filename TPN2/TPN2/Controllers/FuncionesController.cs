@@ -15,24 +15,15 @@ namespace TPN2.Controllers
         {
             _service = service;
         }
-
+        /// <summary>
+        /// Crea una función
+        /// </summary>
+        /// <param name="funcion"></param>
+        /// <returns>Retorna los datos de la función creada</returns>
         [HttpPost]
         public Funciones Post(FuncionesDTO funcion)
         {
             return _service.CreateFuncion(funcion);
         }
-
-        //[HttpGet]
-        //public IList<ClienteDTO> GetClientes()
-        //{
-        //    return _service.GetAll();
-        //}
-
-        //[HttpGet("{clienteId:int}")]
-        
-        //public Cliente GetClienteById(int clienteId)
-        //{
-        //    return _service.GetById(clienteId);
-        //}
     }
 }

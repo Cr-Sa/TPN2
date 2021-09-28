@@ -1,12 +1,13 @@
 ﻿using TPN2.Domain.DTOs;
 using TPN2.Domain.Entities;
+using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace TPN2.Application.Services
+namespace TPN2.Domain.Queries
 {
-    public interface IPeliculasService
+    public interface IPeliculaQuery
     {
-        PeliculasDTO CreatePelicula(PeliculasDTO pelicula);
         PeliculasDTO GetById(int peliculaId);
     }
 }

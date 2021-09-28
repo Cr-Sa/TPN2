@@ -15,24 +15,25 @@ namespace TPN2.Controllers
         {
             _service = service;
         }
-
+        /// <summary>
+        /// Crea una película
+        /// </summary>
+        /// <param name="pelicula"></param>
+        /// <returns>Retorna los datos de la función creada</returns>
         [HttpPost]
-        public Peliculas Post(PeliculasDTO pelicula)
+        public PeliculasDTO Post(PeliculasDTO pelicula)
         {
             return _service.CreatePelicula(pelicula);
         }
-
-        //[HttpGet]
-        //public IList<ClienteDTO> GetClientes()
-        //{
-        //    return _service.GetAll();
-        //}
-
-        //[HttpGet("{clienteId:int}")]
-        
-        //public Cliente GetClienteById(int clienteId)
-        //{
-        //    return _service.GetById(clienteId);
-        //}
+        /// <summary>
+        /// Trae una película por ID
+        /// </summary>
+        /// <param name="peliculaId"></param>
+        /// <returns>Retorna los datos de la función creada</returns>
+        [HttpGet("{peliculaId:int}")]
+        public PeliculasDTO GetPeliculaById(int peliculaId)
+        {
+            return _service.GetById(peliculaId);
+        }
     }
 }

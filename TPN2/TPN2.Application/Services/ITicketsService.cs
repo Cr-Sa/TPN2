@@ -7,7 +7,5 @@ namespace TPN2.Application.Services
     public interface ITicketsService
     {
         Tickets CreateTickets(TicketsDTO ticket);
-        //IList<ClienteDTO> GetAll();
-        //Cliente GetById(int clienteId);
     }
 }

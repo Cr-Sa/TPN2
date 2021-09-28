@@ -7,7 +7,5 @@ namespace TPN2.Application.Services
     public interface IFuncionesService
     {
         Funciones CreateFuncion(FuncionesDTO funcion);
-        //IList<ClienteDTO> GetAll();
-        //Cliente GetById(int clienteId);
     }
 }
