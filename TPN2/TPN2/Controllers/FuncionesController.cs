@@ -3,6 +3,7 @@ using TPN2.Application.Services;
 using TPN2.Domain.DTOs;
 using TPN2.Domain.Entities;
 using System.Collections.Generic;
+using System;
 
 namespace TPN2.Controllers
 {
@@ -25,5 +26,17 @@ namespace TPN2.Controllers
         {
             return _service.CreateFuncion(funcion);
         }
+        /// <summary>
+        /// Trae todas las funciones del dia indicado 
+        /// </summary>
+        /// <param name="fecha"></param>
+        /// <param name="pelicula"></param>
+        /// <returns>Retorna los datos de todas las funciones que corresponden a la fecha</returns>
+        [HttpGet]
+        public IList<FuncionesDTO> GetByFecha( [FromQuery] int pelicula) //[FromQuery] DateTime fecha,
+        {
+            return _service.GetByFecha( pelicula); //fecha,
+        }
+
     }
 }

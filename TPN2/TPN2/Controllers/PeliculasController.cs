@@ -19,7 +19,7 @@ namespace TPN2.Controllers
         /// Crea una película
         /// </summary>
         /// <param name="pelicula"></param>
-        /// <returns>Retorna los datos de la función creada</returns>
+        /// <returns>Retorna los datos de una pelicula creada</returns>
         [HttpPost]
         public PeliculasDTO Post(PeliculasDTO pelicula)
         {
@@ -29,7 +29,7 @@ namespace TPN2.Controllers
         /// Trae una película por ID
         /// </summary>
         /// <param name="peliculaId"></param>
-        /// <returns>Retorna los datos de la función creada</returns>
+        /// <returns>Retorna los datos de una película en especifico</returns>
         [HttpGet("{peliculaId:int}")]
         public PeliculasDTO GetPeliculaById(int peliculaId)
         {

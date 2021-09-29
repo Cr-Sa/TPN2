@@ -1,7 +1,7 @@
 ﻿using TPN2.Domain.Commands;
 using TPN2.Domain.DTOs;
 using TPN2.Domain.Entities;
-//using TPN2.Domain.Queries;
+using TPN2.Domain.Queries;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -11,12 +11,12 @@ namespace TPN2.Application.Services
     public class FuncionesService : IFuncionesService
     {
         private readonly IGenericsRepository _repository;
-        //private readonly IClienteQuery _query;
+        private readonly IFuncionQuery _query;
 
-        public FuncionesService(IGenericsRepository repository) //, IClienteQuery query
+        public FuncionesService(IGenericsRepository repository, IFuncionQuery query) 
         {
             _repository = repository;
-            //_query = query;
+            _query = query;
         }
 
         public Funciones CreateFuncion(FuncionesDTO funcion)
@@ -31,14 +31,23 @@ namespace TPN2.Application.Services
             };
             _repository.Add<Funciones>(entity);
             return entity;
-        }     
-        //public IList<ClienteDTO> GetAll()
-        //{
-        //    return _query.GetAll();
-        //}
-        //public Cliente GetById(int clienteId)
-        //{
-        //    return _query.GetById(clienteId);
-        //}
+        }
+        public IList<FuncionesDTO> GetByFecha( int pelicula) //DateTime fecha,
+        {
+            IList<FuncionesDTO> funciones = _query.GetByFecha( pelicula); //fecha,
+            List<FuncionesDTO> funcionesDisponibles = new List<FuncionesDTO>();
+            foreach (var p in funciones)
+            {
+                funcionesDisponibles.Add(new FuncionesDTO(){
+
+                
+                Fecha = p.Fecha,
+                Horario = p.Horario,
+                PeliculaId = p.PeliculaId,
+                SalaId = p.SalaId,
+                });
+            }
+            return funcionesDisponibles;
+        }
     }
 }

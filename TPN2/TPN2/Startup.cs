@@ -38,6 +38,7 @@ namespace TPN2
             services.AddTransient<IPeliculasService, PeliculasService>();
             services.AddTransient<ITicketsService, TicketsService>();
             services.AddTransient<IPeliculaQuery, PeliculaQuery>();
+            services.AddTransient<IFuncionQuery, FuncionQuery>();
 
             services.AddSwaggerGen(c =>
             {

@@ -19,7 +19,7 @@ namespace TPN2.Controllers
         /// Crea un Ticket
         /// </summary>
         /// <param name="ticket"></param>
-        /// <returns>Retorna los datos de la función creada</returns>
+        /// <returns>Retorna los datos de un Ticket creado</returns>
         [HttpPost]
         public Tickets Post(TicketsDTO ticket)
         {
